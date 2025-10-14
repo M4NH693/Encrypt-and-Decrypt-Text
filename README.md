@@ -6,9 +6,9 @@
 **Công nghệ**: Java, Java Swing (GUI), Java Cryptography Architecture (JCA).
 
 
-## Phân tích kiến trúc
+# Phân tích kiến trúc
 
- **Model(CryptoModel):** 
+**💎 Model (CryptoModel)**
 
 Đây là trái tim của chương trình, chứa tất cả logic xử lý. Nó độc lập hoàn toàn với giao diện người dùng.
 
@@ -19,19 +19,19 @@ Chức năng chính:
 
 - Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
 
-**View (CryptoView)**:
+**🎨 View (CryptoView)**
 
 -Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
 
 
 
-- Chức năng chính:
+Chức năng chính:
 
-Hiển thị các thành phần GUI: Cửa sổ chính (JFrame), trường văn bản để nhập đường dẫn file và khóa (JTextField), các nút chức năng ("Duyệt...", "Mã Hóa", "Giải Mã"), và một khu vực để hiển thị trạng thái (JTextArea).
+- Hiển thị GUI: Bao gồm cửa sổ chính (JFrame), các trường văn bản, nút chức năng ("Duyệt...", "Mã Hóa", "Giải Mã"), và khu vực hiển thị trạng thái (JTextArea).
 
-Cung cấp các phương thức để Controller có thể truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
+- Cung cấp phương thức: Cho phép Controller truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
 
-**Controller(CryptoController)**:
+**🧠 Controller (CryptoController)**
 
  Lớp này hoạt động như một cầu nối giữa View và Model. Nó là trung tâm điều phối tất cả các hành động.
 
