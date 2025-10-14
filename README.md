@@ -1,7 +1,6 @@
 
 # Tên dự án: File Crypto App
 
-
 **Mô tả**: Ứng dụng desktop được phát triển bằng Java Swing, cho phép người dùng mã hóa và giải mã các tệp văn bản (.txt) bằng thuật toán mã hóa mạnh AES (Advanced Encryption Standard). Chương trình được thiết kế theo mô hình kiến trúc MVC (Model-View-Controller) để đảm bảo tính module hóa, dễ bảo trì và mở rộng.
 
 **Công nghệ**: Java, Java Swing (GUI), Java Cryptography Architecture (JCA).
@@ -9,40 +8,40 @@
 
 ## Phân tích kiến trúc
 
-**Model(CryptoModel):** 
+ **Model(CryptoModel):** 
+
 Đây là trái tim của chương trình, chứa tất cả logic xử lý. Nó độc lập hoàn toàn với giao diện người dùng.
 
-Trách nhiệm: Thực hiện các thao tác mã hóa và giải mã file.
-
 Chức năng chính:
+- Mã hóa file: Nhận đầu vào là một khóa (key), file nguồn và file đích. Nó sử dụng thuật toán AES để mã hóa nội dung file nguồn và ghi kết quả vào file đích.
 
-Mã hóa file: Nhận đầu vào là một khóa (key), file nguồn và file đích. Nó sử dụng thuật toán AES để mã hóa nội dung file nguồn và ghi kết quả vào file đích.
+- Giải mã file: Nhận đầu vào tương tự, nhưng sử dụng khóa để giải mã nội dung đã được mã hóa.
 
-Giải mã file: Nhận đầu vào tương tự, nhưng sử dụng khóa để giải mã nội dung đã được mã hóa.
+- Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
 
-Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
+**View (CryptoView)**:
 
-**View (CryptoView)**: Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
+-Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
 
-Trách nhiệm: Hiển thị giao diện người dùng (GUI) và nhận các sự kiện từ người dùng (như nhấp chuột vào nút).
 
-Chức năng chính:
+
+- Chức năng chính:
 
 Hiển thị các thành phần GUI: Cửa sổ chính (JFrame), trường văn bản để nhập đường dẫn file và khóa (JTextField), các nút chức năng ("Duyệt...", "Mã Hóa", "Giải Mã"), và một khu vực để hiển thị trạng thái (JTextArea).
 
 Cung cấp các phương thức để Controller có thể truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
 
-**Controller(CryptoController)**: Lớp này hoạt động như một cầu nối giữa View và Model. Nó là trung tâm điều phối tất cả các hành động.
+**Controller(CryptoController)**:
 
-Trách nhiệm: Lắng nghe các sự kiện từ View, xử lý chúng và cập nhật View dựa trên kết quả từ Model.
+ Lớp này hoạt động như một cầu nối giữa View và Model. Nó là trung tâm điều phối tất cả các hành động.
 
 Chức năng chính:
 
-Xử lý sự kiện: Bắt các sự kiện từ các nút trong View (ví dụ: khi nhấn nút "Mã Hóa").
+- Xử lý sự kiện: Bắt các sự kiện từ các nút trong View (ví dụ: khi nhấn nút "Mã Hóa").
 
-Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (FileEncryptor.encrypt() hoặc FileEncryptor.decrypt()) để thực hiện tác vụ.
+- Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (FileEncryptor.encrypt() hoặc FileEncryptor.decrypt()) để thực hiện tác vụ.
 
-Cập nhật giao diện: Sau khi tác vụ hoàn thành, nó sẽ cập nhật trạng thái trên View (ví dụ: hiển thị thông báo "Mã hóa thành công!" trên statusArea).
+- Cập nhật giao diện: Sau khi tác vụ hoàn thành, nó sẽ cập nhật trạng thái trên View (ví dụ: hiển thị thông báo "Mã hóa thành công!" trên statusArea).
 
 Điểm khởi đầu: Lớp này cũng chứa phương thức main() để khởi tạo và chạy toàn bộ ứng dụng.
 
