@@ -21,7 +21,7 @@ Chức năng chính:
 
 **🎨 View (CryptoView)**
 
--Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
+Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
 
 
 
