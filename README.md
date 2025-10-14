@@ -39,7 +39,7 @@ Chức năng chính:
 
 - Xử lý sự kiện: Bắt các sự kiện từ các nút trong View (ví dụ: khi nhấn nút "Mã Hóa").
 
-- Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (FileEncryptor.encrypt() hoặc FileEncryptor.decrypt()) để thực hiện tác vụ.
+- Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (EncryptoModel.encrypt() hoặc EncryptoModel.decrypt()) để thực hiện tác vụ.
 
 - Cập nhật giao diện: Sau khi tác vụ hoàn thành, nó sẽ cập nhật trạng thái trên View (ví dụ: hiển thị thông báo "Mã hóa thành công!" trên statusArea).
 
