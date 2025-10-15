@@ -8,6 +8,8 @@
 
 # Phân tích kiến trúc
 
+
+
 **💎 Model (CryptoModel)**
 
 Đây là trái tim của chương trình, chứa tất cả logic xử lý. Nó độc lập hoàn toàn với giao diện người dùng.
@@ -18,6 +20,8 @@ Chức năng chính:
 - Giải mã file: Nhận đầu vào tương tự, nhưng sử dụng khóa để giải mã nội dung đã được mã hóa.
 
 - Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
+
+
 
 **🎨 View (CryptoView)**
 
@@ -30,6 +34,9 @@ Chức năng chính:
 - Hiển thị GUI: Bao gồm cửa sổ chính (JFrame), các trường văn bản, nút chức năng ("Duyệt...", "Mã Hóa", "Giải Mã"), và khu vực hiển thị trạng thái (JTextArea).
 
 - Cung cấp phương thức: Cho phép Controller truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
+
+
+
 
 **🧠 Controller (CryptoController)**
 
