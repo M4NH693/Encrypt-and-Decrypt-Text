@@ -1,16 +1,15 @@
 
-# Tên dự án: File Crypto App
+# _Tên dự án: File Crypto App_
 
 **Mô tả**: Ứng dụng desktop được phát triển bằng Java Swing, cho phép người dùng mã hóa và giải mã các tệp văn bản (.txt) bằng thuật toán mã hóa mạnh AES (Advanced Encryption Standard). Chương trình được thiết kế theo mô hình kiến trúc MVC (Model-View-Controller) để đảm bảo tính module hóa, dễ bảo trì và mở rộng.
 
 **Công nghệ**: Java, Java Swing (GUI), Java Cryptography Architecture (JCA).
 
 
-# Phân tích kiến trúc
+# _Phân tích kiến trúc_
 
 
-
-**💎 Model (CryptoModel)**
+### **💎 Model (CryptoModel)**
 
 Đây là trái tim của chương trình, chứa tất cả logic xử lý. Nó độc lập hoàn toàn với giao diện người dùng.
 
@@ -21,11 +20,9 @@ Chức năng chính:
 
 - Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
 
+## **🎨 View (CryptoView)**
 
-
-**🎨 View (CryptoView)**
-
-Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
++ Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
 
 
 
@@ -35,10 +32,7 @@ Chức năng chính:
 
 - Cung cấp phương thức: Cho phép Controller truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
 
-
-
-
-**🧠 Controller (CryptoController)**
+ ## **🧠 Controller (CryptoController)**
 
  Lớp này hoạt động như một cầu nối giữa View và Model. Nó là trung tâm điều phối tất cả các hành động.
 
@@ -46,7 +40,7 @@ Chức năng chính:
 
 - Xử lý sự kiện: Bắt các sự kiện từ các nút trong View (ví dụ: khi nhấn nút "Mã Hóa").
 
-- Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (EncryptoModel.encrypt() hoặc EncryptoModel.decrypt()) để thực hiện tác vụ.
+- Điều phối: Khi một sự kiện xảy ra, nó lấy dữ liệu cần thiết từ View (đường dẫn file, khóa), gọi các phương thức tương ứng trong Model (FileEncryptor.encrypt() hoặc FileEncryptor.decrypt()) để thực hiện tác vụ.
 
 - Cập nhật giao diện: Sau khi tác vụ hoàn thành, nó sẽ cập nhật trạng thái trên View (ví dụ: hiển thị thông báo "Mã hóa thành công!" trên statusArea).
 
