@@ -44,6 +44,5 @@ Chức năng chính:
 
 - Cập nhật giao diện: Sau khi tác vụ hoàn thành, nó sẽ cập nhật trạng thái trên View (ví dụ: hiển thị thông báo "Mã hóa thành công!" trên statusArea).
 
-Điểm khởi đầu: Lớp này cũng chứa phương thức main() để khởi tạo và chạy toàn bộ ứng dụng.
 
 
