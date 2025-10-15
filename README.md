@@ -20,7 +20,7 @@ Chức năng chính:
 
 - Thuật toán: Sử dụng AES với khóa có độ dài 16 byte (128-bit) để đảm bảo tính bảo mật.
 
-## **🎨 View (CryptoView)**
+### **🎨 View (CryptoView)**
 
 + Đây là thành phần giao diện người dùng, nơi người dùng tương tác trực tiếp. Nó không chứa bất kỳ logic xử lý nào.
 
@@ -32,7 +32,7 @@ Chức năng chính:
 
 - Cung cấp phương thức: Cho phép Controller truy cập và thay đổi trạng thái của các thành phần GUI (ví dụ: getFilePath(), setFilePath(), appendStatus()).
 
- ## **🧠 Controller (CryptoController)**
+ ### **🧠 Controller (CryptoController)**
 
  Lớp này hoạt động như một cầu nối giữa View và Model. Nó là trung tâm điều phối tất cả các hành động.
 
